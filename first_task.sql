@@ -4,7 +4,7 @@ CREATE TABLE calls_table (
     call_date DATE NOT NULL
 );
 
--- Вставка данных в calls_table
+-- Заполнение таблицы calls_table данными
 INSERT INTO calls_table (call_id, call_date)
 VALUES
     (241241, '2021-01-01'),
@@ -22,7 +22,7 @@ CREATE TABLE eval_table (
     call_eval INT
 );
 
--- Вставка данных в eval_table
+-- заполнение таблицы eval_table данными
 INSERT INTO eval_table (call_id, call_eval)
 VALUES
     (241241, 3),
@@ -35,7 +35,7 @@ VALUES
     (224854, 3);
     
     
--- SQL-запрос для расчета доли плохих оценок по каждому дню
+-- Запрос для расчета процента плохих оценок по каждому дню
 SELECT
     c.call_date,
     COUNT(e.call_eval) AS total_evaluations,
