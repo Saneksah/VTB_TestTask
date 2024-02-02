@@ -6,7 +6,7 @@ CREATE TABLE chats_table (
     date_time DATETIME
 );
 
--- Вставка данных в chats_table
+-- Заполнение таблицы chats_table данными
 INSERT INTO chats_table (message_id, sent_by, chat_id, date_time)
 VALUES
     (403, 'Оператор', 1, '2022-03-16 10:40'),
@@ -22,7 +22,7 @@ VALUES
     (640, 'Оператор', 4, '2022-03-20 16:28'),
     (37, 'Клиент', 5, '2022-03-21 23:52');
     
--- SQL-запрос для вывода скорости ответа оператора для каждого чата (для SQLite)
+-- Запрос для вывода скорости ответа (в секундах) оператора для каждого чата
 SELECT
     c.chat_id,
     MIN(CASE WHEN c.sent_by = 'Клиент' THEN c.date_time END) AS client_message_time,
