@@ -20,10 +20,14 @@ VALUES
     
 -- Запрос для вывода количества сообщений с нарастающим итогом по дням
 SELECT
-    date,
-    chats_cnt,
-    SUM(chats_cnt) OVER (ORDER BY date) AS cumulative_chats_cnt
+    t1.date,
+    t1.chats_cnt,
+    SUM(t2.chats_cnt) AS cumulative_chats_cnt
 FROM
-    client_calls_table
+    client_calls_table t1
+JOIN
+    client_calls_table t2 ON t1.date >= t2.date
+GROUP BY
+    t1.date, t1.chats_cnt
 ORDER BY
-    date;
+    t1.date;
