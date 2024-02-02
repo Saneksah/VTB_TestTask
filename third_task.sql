@@ -4,7 +4,7 @@
 нарастающим итогом по дням. Выводимые запросом данные отсортировать по дате.
 
 
-Создание таблицы client_calls_table
+-- Создание таблицы client_calls_table
 CREATE TABLE client_calls_table (
     date DATE PRIMARY KEY,
     chats_cnt INT
