@@ -4,7 +4,7 @@ CREATE TABLE client_calls_table (
     chats_cnt INT
 );
 
--- Вставка данных в client_calls_table
+-- Заполнение таблицы client_calls_table данными
 INSERT INTO client_calls_table (date, chats_cnt)
 VALUES
     ('2021-11-17', 265172),
@@ -18,7 +18,7 @@ VALUES
     ('2021-11-10', 114104),
     ('2021-10-04', 135472);
     
--- SQL-запрос для вывода количества сообщений с нарастающим итогом по дням
+-- Запрос для вывода количества сообщений с нарастающим итогом по дням
 SELECT
     date,
     chats_cnt,
