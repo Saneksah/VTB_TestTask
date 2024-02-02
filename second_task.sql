@@ -5,7 +5,7 @@ CREATE TABLE client_table (
     call_date DATE
 );
 
--- Вставка данных в client_table
+-- Заполнение таблицы client_table данными
 INSERT INTO client_table (client_id, call_id, call_date)
 VALUES
     (8, 935, '2021-11-31'),
@@ -17,7 +17,7 @@ VALUES
     (5, 544, '2022-02-21'),
     (2, 1575, '2021-05-09');
     
--- SQL-запрос для подсчета уникальных клиентов по месяцам (для SQLite)
+-- Запрос для подсчета уникальных клиентов по месяцам
 SELECT
     strftime('%m', call_date) AS month,
     strftime('%Y', call_date) AS year,
